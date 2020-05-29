@@ -1,1 +1,2 @@
-# phobia
+# Phobia
+A puzzle-based ambient/horror game. The character is a white, glowing, humanoid figure that starts in what appears to be sewers. As the player proceeds through the puzzles and levels they begin to "ascend" until at some point they appear above ground in the night sky. However, as you complete puzzles and pass levels, the character's glow gets dimmer and dimmer. Once you complete the game you are all but a grey/black glowing figure basking in the moon light.
