@@ -16,8 +16,15 @@ _global_script_class_icons={
 [application]
 
 config/name="Phobia"
+run/main_scene="res://title_screen/Title Screen.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
 
 [rendering]
 
+environment/default_clear_color=Color( 0.129412, 0.0509804, 0.0509804, 1 )
 environment/default_environment="res://default_env.tres"
