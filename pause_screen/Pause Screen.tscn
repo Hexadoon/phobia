@@ -49,7 +49,7 @@ margin_top = 120.0
 margin_right = 360.0
 margin_bottom = 180.0
 rect_min_size = Vector2( 360, 60 )
-scene_to_load = "res://game/Controls.tscn"
+scene_to_load = "res://game/Controls (Pause Screen).tscn"
 
 [node name="Exit To Menu Button" parent="CenterContainer/VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 184.0
