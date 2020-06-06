@@ -1,15 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://character/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://pause_screen/Pause Screen.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32.7955 )
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
 [node name="World" type="Node"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 544, 224 )
+position = Vector2( 640, 448 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -20,3 +24,114 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource( 1 )
+
+[node name="Floors" type="Node" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="Floors"]
+position = Vector2( 640, 512 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floors/Floor"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor"]
+shape = SubResource( 2 )
+
+[node name="Floor2" type="StaticBody2D" parent="Floors"]
+position = Vector2( 576, 512 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floors/Floor2"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor2"]
+shape = SubResource( 2 )
+
+[node name="Floor3" type="StaticBody2D" parent="Floors"]
+position = Vector2( 512, 512 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floors/Floor3"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor3"]
+shape = SubResource( 2 )
+
+[node name="Floor4" type="StaticBody2D" parent="Floors"]
+position = Vector2( 448, 512 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floors/Floor4"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor4"]
+shape = SubResource( 2 )
+
+[node name="Floor5" type="StaticBody2D" parent="Floors"]
+position = Vector2( 448, 448 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floors/Floor5"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor5"]
+shape = SubResource( 2 )
+
+[node name="Floor6" type="StaticBody2D" parent="Floors"]
+position = Vector2( 448, 384 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floors/Floor6"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor6"]
+shape = SubResource( 2 )
+
+[node name="Floor7" type="StaticBody2D" parent="Floors"]
+position = Vector2( 704, 512 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floors/Floor7"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor7"]
+shape = SubResource( 2 )
+
+[node name="Floor8" type="StaticBody2D" parent="Floors"]
+position = Vector2( 768, 512 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floors/Floor8"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor8"]
+shape = SubResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Screen" parent="CanvasLayer" instance=ExtResource( 3 )]
+visible = false

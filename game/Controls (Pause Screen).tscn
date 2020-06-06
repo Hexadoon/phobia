@@ -25,9 +25,8 @@ margin_right = 832.0
 margin_bottom = 645.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = -1.0
 margin_right = 384.0
-margin_bottom = 499.0
+margin_bottom = 500.0
 rect_min_size = Vector2( 0, 500 )
 custom_fonts/font = ExtResource( 1 )
 text = "Controls Scene"

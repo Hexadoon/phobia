@@ -42,7 +42,7 @@ margin_top = 56.0
 margin_right = 360.0
 margin_bottom = 116.0
 rect_min_size = Vector2( 360, 60 )
-scene_to_load = "res://game/New Game.tscn"
+scene_to_load = "res://character/World.tscn"
 
 [node name="Pause Screen Controls" parent="CenterContainer/VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 120.0

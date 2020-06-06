@@ -55,7 +55,7 @@ margin_top = 106.0
 margin_right = 518.0
 margin_bottom = 166.0
 rect_min_size = Vector2( 360, 60 )
-scene_to_load = "res://game/New Game.tscn"
+scene_to_load = "res://character/World.tscn"
 
 [node name="Controls Button" parent="Menu/Center Row/Buttons" instance=ExtResource( 1 )]
 margin_top = 186.0
