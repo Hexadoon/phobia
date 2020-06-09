@@ -71,7 +71,11 @@ func _physics_process(delta):
 				$Sprite.play(idle_animation)
 
 		if Input.is_action_just_pressed("ui_up"):
-			#TODO add jump animation?
+			
+			#TODO: Once ladders are added, check if player is in contact with a 
+			# ladder to do climb animation instead of jump!
+			
+			$Sprite.play("Jump")
 			motion.y = JUMP_FORCE
 	
 	# In air.
