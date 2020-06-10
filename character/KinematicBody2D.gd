@@ -8,6 +8,10 @@ const JUMP_FORCE = -400
 var motion = Vector2()
 var idle_animation = "Idle" # Controls which idle animation is played.
 var flag = true # Will allow for pick up animation to play in full.
+var door
+
+func _ready():
+	door = get_parent().get_node("Door")
 
 func _physics_process(delta):
 	"""
@@ -112,3 +116,13 @@ func _on_Sprite_animation_finished():
 			idle_animation = "Idle_Looking_Around"
 		else:
 			idle_animation = "Idle"
+
+func _on_Door_area_entered(area):
+	print("player collide with door")
+	door.cango = true
+	pass
+
+func _on_Door_area_exited(area):
+	print("player exit from door")
+	door.cango = false
+	pass
