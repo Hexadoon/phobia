@@ -64,11 +64,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 58 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 55 ) ],
-"loop": true,
-"name": "Climb",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 22 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "Crouch_Idle",
@@ -99,7 +94,7 @@ animations = [ {
 "name": "Idle_Blinking",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 46 ), ExtResource( 45 ) ],
+"frames": [ ExtResource( 45 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 46 ), ExtResource( 45 ) ],
 "loop": true,
 "name": "Pick_Up",
 "speed": 7.0
@@ -123,6 +118,11 @@ animations = [ {
 "loop": true,
 "name": "Jump",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 58 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 55 ) ],
+"loop": true,
+"name": "Climb",
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -142,7 +142,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 1 )
-animation = "Climb_Transition"
+animation = "Pick_Up"
 frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
