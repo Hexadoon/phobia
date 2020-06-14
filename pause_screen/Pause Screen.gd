@@ -1,6 +1,7 @@
 extends Control
 
 var scene_path_to_load
+var c = 0
 
 func _ready():
 	"""
@@ -9,7 +10,11 @@ func _ready():
 	"""
 	$"CenterContainer/VBoxContainer/Resume Button".grab_focus()
 	for button in $"CenterContainer/VBoxContainer".get_children():
-		button.connect("pressed", self, "_on_Button_pressed", [button.scene_to_load])
+		if c == 0:
+			pass
+		else:
+			button.connect("pressed", self, "_on_Button_pressed", [button.scene_to_load])
+		c += 1
 
 func _on_Button_pressed(scene_to_load):
 	"""
@@ -25,3 +30,6 @@ func _input(event):
 		get_tree().paused = not get_tree().paused
 		visible = not visible
 
+func _on_Resume_Button_pressed():
+	get_tree().paused = not get_tree().paused
+	visible = not visible
