@@ -16,11 +16,16 @@ func _on_Button_pressed(scene_to_load):
 	Begins Fade In animation.
 	"""
 	scene_path_to_load = scene_to_load
+	
 	$"Fade In".show()
 	$"Fade In".fade_in()
 
 func _on_Fade_In_fade_finished():
 	"""
 	Switches scenes upon completion of Fade In animation.
+	If Quit is selected, game is exitted.
 	"""
-	get_tree().change_scene(scene_path_to_load)
+	if scene_path_to_load == "res://game/Quit.tscn":
+		get_tree().quit()
+	else:
+		get_tree().change_scene(scene_path_to_load)
