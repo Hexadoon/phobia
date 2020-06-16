@@ -9,6 +9,7 @@ var motion = Vector2()
 var idle_animation = "Idle" # Controls which idle animation is played.
 var flag = true # Will allow for pick up animation to play in full.
 var door
+var count = 0
 
 func _ready():
 	door = get_parent().get_node("Door")
@@ -105,17 +106,22 @@ func _on_Sprite_animation_finished():
 		- switching between idle and idle blinking animations.
 	"""
 	# Handles pick up
-	if !flag:
+	if !flag && (count < 6 || (count > 6 && count < 11) || (count > 11 && count < 15)):
 		$Sprite.play(idle_animation)
 		flag = true
+		count += 1
 	# Handles idle
 	else:
-		if idle_animation == "Idle":
+		if (count == 6 || count == 15):
 			idle_animation = "Idle_Blinking"
-		elif idle_animation == "Idle_Blinking":
+		elif count == 11:
 			idle_animation = "Idle_Looking_Around"
 		else:
 			idle_animation = "Idle"
+		count += 1
+	if count == 16:
+		count = 0
+	print (count)
 
 func _on_Door_area_entered(area):
 	print("player collide with door")
