@@ -29,3 +29,8 @@ func _on_Fade_In_fade_finished():
 		get_tree().quit()
 	else:
 		get_tree().change_scene(scene_path_to_load)
+
+
+func _on_AudioStreamPlayer2D_finished():
+	var background_music = $"Background Music/AudioStreamPlayer2D"
+	background_music.play()
