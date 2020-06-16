@@ -8,7 +8,8 @@
 [ext_resource path="res://objects/images/doors/phobia_door1_13.png" type="Texture" id=6]
 [ext_resource path="res://objects/images/doors/phobia_door1_9.png" type="Texture" id=7]
 [ext_resource path="res://objects/images/doors/phobia_door1_10.png" type="Texture" id=8]
-[ext_resource path="res://objects/Door.gd" type="Script" id=9]
+[ext_resource path="res://objects/Door/Door.gd" type="Script" id=9]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
