@@ -1,153 +1,11 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://character/KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://pause_screen/Pause Screen.tscn" type="PackedScene" id=3]
-[ext_resource path="res://character/images/idle/phobia_lilguy_idle3.png" type="Texture" id=4]
-[ext_resource path="res://character/images/idle/phobia_lilguy_idle2.png" type="Texture" id=5]
-[ext_resource path="res://character/images/idle/phobia_lilguy_idle1.png" type="Texture" id=6]
-[ext_resource path="res://character/images/walk/phobia_lilguy_walk_5.png" type="Texture" id=7]
-[ext_resource path="res://character/images/walk/phobia_lilguy_walk_6.png" type="Texture" id=8]
-[ext_resource path="res://character/images/walk/phobia_lilguy_walk_1.png" type="Texture" id=9]
-[ext_resource path="res://character/images/walk/phobia_lilguy_walk_4.png" type="Texture" id=10]
-[ext_resource path="res://character/images/walk/phobia_lilguy_walk_3.png" type="Texture" id=11]
-[ext_resource path="res://character/images/walk/phobia_lilguy_walk_8.png" type="Texture" id=12]
-[ext_resource path="res://character/images/walk/phobia_lilguy_walk_2.png" type="Texture" id=13]
-[ext_resource path="res://character/images/walk/phobia_lilguy_walk_7.png" type="Texture" id=14]
-[ext_resource path="res://character/images/idle blink/phobia_lilguy_idleblink_3.png" type="Texture" id=15]
-[ext_resource path="res://character/images/idle blink/phobia_lilguy_idleblink_2.png" type="Texture" id=16]
-[ext_resource path="res://character/images/idle to walk transition/phobia_lilguy_idletowalktransition.png" type="Texture" id=17]
-[ext_resource path="res://character/images/idle blink/phobia_lilguy_idleblink_1.png" type="Texture" id=18]
-[ext_resource path="res://character/images/crouch loop/phobia_lilguy_crouchloop_2.png" type="Texture" id=19]
-[ext_resource path="res://character/images/crouch loop/phobia_lilguy_crouchloop_3.png" type="Texture" id=20]
-[ext_resource path="res://character/images/crouch transition/phobia_lilguy_crouchtransition.png" type="Texture" id=21]
-[ext_resource path="res://character/images/crouch loop/phobia_lilguy_crouchloop_1.png" type="Texture" id=22]
-[ext_resource path="res://character/images/look around/phobia_lilguy_idlelookaround_4.png" type="Texture" id=23]
-[ext_resource path="res://character/images/look around/phobia_lilguy_idlelookaround_1.png" type="Texture" id=24]
-[ext_resource path="res://character/images/look around/phobia_lilguy_idlelookaround_5.png" type="Texture" id=25]
-[ext_resource path="res://character/images/look around/phobia_lilguy_idlelookaround_8.png" type="Texture" id=26]
-[ext_resource path="res://character/images/look around/phobia_lilguy_idlelookaround_6.png" type="Texture" id=27]
-[ext_resource path="res://character/images/look around/phobia_lilguy_idlelookaround_7.png" type="Texture" id=28]
-[ext_resource path="res://character/images/look around/phobia_lilguy_idlelookaround_2.png" type="Texture" id=29]
-[ext_resource path="res://character/images/look around/phobia_lilguy_idlelookaround_11.png" type="Texture" id=30]
-[ext_resource path="res://character/images/look around/phobia_lilguy_idlelookaround_3.png" type="Texture" id=31]
-[ext_resource path="res://character/images/look around/phobia_lilguy_idlelookaround_9.png" type="Texture" id=32]
-[ext_resource path="res://character/images/look around/phobia_lilguy_idlelookaround_12.png" type="Texture" id=33]
-[ext_resource path="res://character/images/look around/phobia_lilguy_idlelookaround_10.png" type="Texture" id=34]
-[ext_resource path="res://character/images/crouch walk/phobia_lilguy_crouchwalk_2.png" type="Texture" id=35]
-[ext_resource path="res://character/images/crouch walk/phobia_lilguy_crouchwalk_1.png" type="Texture" id=36]
-[ext_resource path="res://character/images/crouch walk/phobia_lilguy_crouchwalk_8.png" type="Texture" id=37]
-[ext_resource path="res://character/images/crouch walk/phobia_lilguy_crouchwalk_7.png" type="Texture" id=38]
-[ext_resource path="res://character/images/crouch walk/phobia_lilguy_crouchwalk_6.png" type="Texture" id=39]
-[ext_resource path="res://character/images/crouch walk/phobia_lilguy_crouchwalk_3.png" type="Texture" id=40]
-[ext_resource path="res://character/images/crouch walk/phobia_lilguy_crouchwalk_4.png" type="Texture" id=41]
-[ext_resource path="res://character/images/crouch walk/phobia_lilguy_crouchwalk_5.png" type="Texture" id=42]
-[ext_resource path="res://character/images/pick up/phobia_lilguy_pickup_1.png" type="Texture" id=43]
-[ext_resource path="res://character/images/pick up/phobia_lilguy_pickup_2.png" type="Texture" id=44]
-[ext_resource path="res://character/images/pick up/phobia_lilguy_pickup_4.png" type="Texture" id=45]
-[ext_resource path="res://character/images/pick up/phobia_lilguy_pickup_3.png" type="Texture" id=46]
-[ext_resource path="res://character/images/jump/phobia_lilguy_jump_1.png" type="Texture" id=47]
-[ext_resource path="res://character/images/jump/phobia_lilguy_jump_7.png" type="Texture" id=48]
-[ext_resource path="res://character/images/jump/phobia_lilguy_jump_6.png" type="Texture" id=49]
-[ext_resource path="res://character/images/jump/phobia_lilguy_jump_4.png" type="Texture" id=50]
-[ext_resource path="res://character/images/jump/phobia_lilguy_jump_3.png" type="Texture" id=51]
-[ext_resource path="res://character/images/jump/phobia_lilguy_jump_2.png" type="Texture" id=52]
-[ext_resource path="res://character/images/jump/phobia_lilguy_jump_8.png" type="Texture" id=53]
-[ext_resource path="res://character/images/jump/phobia_lilguy_jump_5.png" type="Texture" id=54]
-[ext_resource path="res://character/images/climb/phobia_lilguy_climb_4.png" type="Texture" id=55]
-[ext_resource path="res://character/images/climb transition/phobia_lilguy_climbtransition_2.png" type="Texture" id=56]
-[ext_resource path="res://character/images/climb transition/phobia_lilguy_climbtransition_1.png" type="Texture" id=57]
-[ext_resource path="res://character/images/climb/phobia_lilguy_climb_1.png" type="Texture" id=58]
-[ext_resource path="res://character/images/climb/phobia_lilguy_climb_3.png" type="Texture" id=59]
-[ext_resource path="res://character/images/climb transition/phobia_lilguy_climbtransition_3.png" type="Texture" id=60]
-[ext_resource path="res://character/images/climb/phobia_lilguy_climb_2.png" type="Texture" id=61]
 [ext_resource path="res://objects/Door.tscn" type="PackedScene" id=62]
 
-[sub_resource type="CanvasItemMaterial" id=1]
-blend_mode = 1
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 22 ), ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "Crouch_Idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "Crouch_Transition",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 18 ), ExtResource( 16 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "Idle_Blinking",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 57 ), ExtResource( 56 ), ExtResource( 60 ) ],
-"loop": true,
-"name": "Climb_Transition",
-"speed": 7.0
-}, {
-"frames": [ ExtResource( 24 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 30 ), ExtResource( 33 ) ],
-"loop": true,
-"name": "Idle_Looking_Around",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 47 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 50 ), ExtResource( 54 ), ExtResource( 49 ), ExtResource( 48 ), ExtResource( 53 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 58 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 55 ) ],
-"loop": true,
-"name": "Climb",
-"speed": 7.0
-}, {
-"frames": [ ExtResource( 36 ), ExtResource( 35 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 37 ) ],
-"loop": true,
-"name": "Crouch_Walk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 17 ) ],
-"loop": true,
-"name": "Idle_to_Walk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 45 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 46 ), ExtResource( 45 ) ],
-"loop": true,
-"name": "Pick_Up",
-"speed": 7.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 50, 150 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 52, 150.171 )
-
-[sub_resource type="Environment" id=5]
-background_mode = 4
-background_energy = 0.47
-glow_enabled = true
-glow_levels/1 = true
-glow_levels/2 = true
-glow_levels/5 = false
-glow_blend_mode = 0
-glow_bicubic_upscale = true
-adjustment_enabled = true
-adjustment_brightness = 0.75
-
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
 
 [node name="World" type="Node"]
@@ -155,30 +13,7 @@ extents = Vector2( 32, 32 )
 [node name="Door" parent="." instance=ExtResource( 62 )]
 position = Vector2( 896, 320 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 352, 384 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Player"]
-material = SubResource( 1 )
-frames = SubResource( 2 )
-animation = "Idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 12, 40 )
-shape = SubResource( 3 )
-
-[node name="Area2D" type="Area2D" parent="Player"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
-position = Vector2( 12, 40 )
-shape = SubResource( 4 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Player"]
-environment = SubResource( 5 )
+[node name="Player" parent="." instance=ExtResource( 1 )]
 
 [node name="Floors" type="Node" parent="."]
 
@@ -193,7 +28,7 @@ modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Floor9" type="StaticBody2D" parent="Floors"]
 position = Vector2( 1024, 608 )
@@ -206,7 +41,7 @@ modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor9"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Floor10" type="StaticBody2D" parent="Floors"]
 position = Vector2( 256, 608 )
@@ -219,7 +54,7 @@ modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor10"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Floor11" type="StaticBody2D" parent="Floors"]
 position = Vector2( 960, 608 )
@@ -232,7 +67,7 @@ modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor11"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Floor12" type="StaticBody2D" parent="Floors"]
 position = Vector2( 896, 608 )
@@ -245,7 +80,7 @@ modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor12"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Floor13" type="StaticBody2D" parent="Floors"]
 position = Vector2( 832, 608 )
@@ -258,7 +93,7 @@ modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor13"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Floor2" type="StaticBody2D" parent="Floors"]
 position = Vector2( 576, 608 )
@@ -271,7 +106,7 @@ modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor2"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Floor3" type="StaticBody2D" parent="Floors"]
 position = Vector2( 512, 608 )
@@ -284,7 +119,7 @@ modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor3"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Floor4" type="StaticBody2D" parent="Floors"]
 position = Vector2( 448, 608 )
@@ -297,7 +132,7 @@ modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor4"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Floor5" type="StaticBody2D" parent="Floors"]
 position = Vector2( 384, 608 )
@@ -310,7 +145,7 @@ modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor5"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Floor6" type="StaticBody2D" parent="Floors"]
 position = Vector2( 320, 608 )
@@ -323,7 +158,7 @@ modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor6"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Floor7" type="StaticBody2D" parent="Floors"]
 position = Vector2( 704, 608 )
@@ -336,7 +171,7 @@ modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor7"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Floor8" type="StaticBody2D" parent="Floors"]
 position = Vector2( 768, 608 )
@@ -349,12 +184,9 @@ modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor8"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause Screen" parent="CanvasLayer" instance=ExtResource( 3 )]
 visible = false
-[connection signal="area_entered" from="Door" to="Player" method="_on_Door_area_entered"]
-[connection signal="area_exited" from="Door" to="Player" method="_on_Door_area_exited"]
-[connection signal="animation_finished" from="Player/Sprite" to="Player" method="_on_Sprite_animation_finished"]
