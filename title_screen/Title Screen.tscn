@@ -10,7 +10,7 @@
 [ext_resource path="res://title_screen/images/character_sitting/lilguymainscreen1.png" type="Texture" id=8]
 [ext_resource path="res://title_screen/images/character_sitting/lilguymainscreen3.png" type="Texture" id=9]
 [ext_resource path="res://title_screen/images/character_sitting/lilguymainscreen2.png" type="Texture" id=10]
-[ext_resource path="res://title_screen/music/My_Song_3.m4a (online-audio-converter.com).wav" type="AudioStream" id=11]
+[ext_resource path="res://title_screen/music/My_Song_3.wav" type="AudioStream" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -94,6 +94,7 @@ size_flags_vertical = 3
 position = Vector2( 529.34, 253.896 )
 scale = Vector2( 0.455484, 0.455484 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Version" type="Label" parent="Menu"]
