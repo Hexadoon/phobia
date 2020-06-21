@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://character/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/Door_Vertical_Sliding/Door_Vertical_Sliding.tscn" type="PackedScene" id=2]
 [ext_resource path="res://pause_screen/Pause Screen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://tilesets/TileMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/Door_Horizontal_Sliding/Door_Horizontal_Sliding.tscn" type="PackedScene" id=5]
@@ -13,6 +14,9 @@ position = Vector2( 918.207, 276 )
 
 [node name="Door_Horizontal_Sliding" parent="." instance=ExtResource( 5 )]
 position = Vector2( 101.195, 276 )
+
+[node name="Door_Vertical_Sliding" parent="." instance=ExtResource( 2 )]
+position = Vector2( -312, 264 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 364, 332 )
@@ -29,3 +33,5 @@ script = null
 [connection signal="area_exited" from="Door" to="Player" method="_on_Door_area_exited"]
 [connection signal="area_entered" from="Door_Horizontal_Sliding" to="Player" method="_on_Door_Horizontal_Sliding_area_entered"]
 [connection signal="area_exited" from="Door_Horizontal_Sliding" to="Player" method="_on_Door_Horizontal_Sliding_area_exited"]
+[connection signal="area_entered" from="Door_Vertical_Sliding" to="Player" method="_on_Door_Vertical_Sliding_area_entered"]
+[connection signal="area_exited" from="Door_Vertical_Sliding" to="Player" method="_on_Door_Vertical_Sliding_area_exited"]
