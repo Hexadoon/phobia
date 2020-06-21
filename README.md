@@ -12,10 +12,16 @@ A puzzle-based ambient/horror game. You are a white, glowing, humanoid figure th
 ##### Submitting Issues
 Before submitting an issue please check to make sure that there is no similar open issue. Please use the appropriate [template](https://github.com/Hexadoon/phobia/issues/new/choose) when submitting an issue.
 
+##### Testing
+Anyone is free to manually test the program. We welcome any bug reports or enhancements suggestions as well.
+
 ##### Submitting Pull Requests
+Patches/fixes are only accepted in the form of pull requests. Make sure the issue the pull request addresses is open in the issue tracker.
+
+When submitting pull requests you agree to publish under [MIT license](https://github.com/Hexadoon/phobia/blob/master/LICENSE).
 
 ### License
-Phobia is under MIT license. It can be reused within proprietary software provided that all copies of the licensed software include a copy of the MIT License terms and the copyright notice.
+Phobia is under [MIT license](https://github.com/Hexadoon/phobia/blob/master/LICENSE). It can be reused within proprietary software provided that all copies of the licensed software include a copy of the MIT License terms and the copyright notice.
 
 Phobia Uses the following software
 - Godot
