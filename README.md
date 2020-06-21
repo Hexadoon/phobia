@@ -1,2 +1,20 @@
 # Phobia
-A puzzle-based ambient/horror game. The character is a white, glowing, humanoid figure that starts in what appears to be sewers. As the player proceeds through the puzzles and levels they begin to "ascend" until at some point they appear above ground in the night sky. However, as you complete puzzles and pass levels, the character's glow gets dimmer and dimmer. Once you complete the game you are all but a grey/black glowing figure basking in the moon light.
+A puzzle-based ambient/horror game. You are a white, glowing, humanoid figure that starts in what appears to be sewers. As you proceed through the puzzles and levels you begin to "ascend" until at some point you appear above ground facing the night sky. However, as you complete puzzles and pass levels, your light glow gets dimmer and dimmer.
+
+(Add screen shots)
+
+# Specifications
+- Run on Windows, Mac, and Linux
+
+# How To Install
+
+# How to Contribute
+
+# License
+Phobia is under MIT license. It can be reused within proprietary software provided that all copies of the licensed software include a copy of the MIT License terms and the copyright notice.
+
+Phobia Uses the following software
+- Godot
+- Photoshop
+- Animator (check)
+ 
