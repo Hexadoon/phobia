@@ -9,6 +9,10 @@ A puzzle-based ambient/horror game. You are a white, glowing, humanoid figure th
 ### How To Install
 
 ### How to Contribute
+##### Submitting Issues
+Before submitting an issue please check to make sure that there is no similar open issue. Please use the appropriate [template](https://github.com/Hexadoon/phobia/issues/new/choose) when submitting an issue.
+
+##### Submitting Pull Requests
 
 ### License
 Phobia is under MIT license. It can be reused within proprietary software provided that all copies of the licensed software include a copy of the MIT License terms and the copyright notice.
