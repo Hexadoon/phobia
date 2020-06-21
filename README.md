@@ -1,12 +1,17 @@
 # Phobia
-A puzzle-based ambient/horror game. You are a white, glowing, humanoid figure that starts in what appears to be sewers. As you proceed through the puzzles and levels you begin to "ascend" until at some point you appear above ground facing the night sky. However, as you complete puzzles and pass levels, your light glow gets dimmer and dimmer.
+A puzzle-based ambient/horror game.
+
+You are a white, glowing, humanoid figure that starts in what appears to be sewers. As you proceed through the puzzles and levels you begin to "ascend" until at some point you appear above ground facing the night sky. However, as you complete puzzles and pass levels, your light glow gets dimmer and dimmer.
 
 (Add screen shots)
 
 ### Specifications
 - Run on Windows, Mac, and Linux
+- Coding in GDscript
+- Keyboard and Mouse/trackpad inputs only
 
 ### How To Install
+(Installation instructions for godot then game)
 
 ### How to Contribute
 #### Submitting Issues
