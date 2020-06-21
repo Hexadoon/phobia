@@ -3,7 +3,7 @@ A puzzle-based ambient/horror game. You are a white, glowing, humanoid figure th
 
 (Add screen shots)
 
-# Specifications
+## Specifications
 - Run on Windows, Mac, and Linux
 
 # How To Install
