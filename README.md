@@ -3,14 +3,14 @@ A puzzle-based ambient/horror game. You are a white, glowing, humanoid figure th
 
 (Add screen shots)
 
-## Specifications
+### Specifications
 - Run on Windows, Mac, and Linux
 
-# How To Install
+### How To Install
 
-# How to Contribute
+### How to Contribute
 
-# License
+### License
 Phobia is under MIT license. It can be reused within proprietary software provided that all copies of the licensed software include a copy of the MIT License terms and the copyright notice.
 
 Phobia Uses the following software
