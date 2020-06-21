@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://pause_screen/Pause Screen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://tilesets/TileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/Door_Horizontal_Sliding/Door_Horizontal_Sliding.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/Door/Door.tscn" type="PackedScene" id=62]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -325,5 +326,10 @@ visible = false
 [node name="TileMap" parent="." instance=ExtResource( 4 )]
 tile_data = PoolIntArray( 655359, 2, 0, 589824, 2, 1, 589825, 2, 1, 589826, 2, 2, 720895, 2, 131072, 655360, 2, 131073, 655361, 2, 131073, 655362, 2, 131074 )
 script = null
+
+[node name="Door_Horizontal_Sliding" parent="." instance=ExtResource( 5 )]
+position = Vector2( 96, 320 )
 [connection signal="area_entered" from="Door" to="Player" method="_on_Door_area_entered"]
 [connection signal="area_exited" from="Door" to="Player" method="_on_Door_area_exited"]
+[connection signal="area_entered" from="Door_Horizontal_Sliding" to="Player" method="_on_Door_Horizontal_Sliding_area_entered"]
+[connection signal="area_exited" from="Door_Horizontal_Sliding" to="Player" method="_on_Door_Horizontal_Sliding_area_exited"]

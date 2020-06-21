@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/phobia_door2_1.png-1da3fe99a4ec107a3ff28708b4ce17ea.stex"
+path="res://.import/phobia_door2_16.png-ed70951b536d7ea17162b355ccbe55ed.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/images/doors/phobia_door2_1.png"
-dest_files=[ "res://.import/phobia_door2_1.png-1da3fe99a4ec107a3ff28708b4ce17ea.stex" ]
+source_file="res://objects/Door_Horizontal_Sliding/images/phobia_door2_16.png"
+dest_files=[ "res://.import/phobia_door2_16.png-ed70951b536d7ea17162b355ccbe55ed.stex" ]
 
 [params]
 
