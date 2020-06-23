@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
 const UP = Vector2(0, -1)
-const SPEED = 200
+const SPEED = 500 #200
 const GRAVITY = 30
-const JUMP_FORCE = -400
+const JUMP_FORCE = -500
 
 var motion = Vector2()
 var idle_animation = "Idle" # Controls which idle animation is played.
@@ -89,9 +89,9 @@ func _physics_process(delta):
 				
 				#TODO: Once ladders are added, check if player is in contact with a 
 				# ladder to do climb animation instead of jump!
-				
-				$Sprite.play("Jump")
 				motion.y = JUMP_FORCE
+				$Sprite.play("Jump")
+				
 	# In air.
 	else:
 		if Input.is_action_pressed("ui_right"):
@@ -100,11 +100,10 @@ func _physics_process(delta):
 		elif Input.is_action_pressed("ui_left"):
 			motion.x = -SPEED
 			$Sprite.flip_h = true
-
 	# Handles gravity and applies motion.
 	motion.y += GRAVITY
 	motion = move_and_slide(motion, UP)
-	
+
 func _on_Sprite_animation_finished():
 	"""
 	Controls:
@@ -127,7 +126,6 @@ func _on_Sprite_animation_finished():
 		count += 1
 	if count == 16:
 		count = 0
-	print (count)
 
 func _on_Door_area_entered(area):
 	print("player collide with door")
