@@ -1,0 +1,61 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_4.png" type="Texture" id=1]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_7 2.png" type="Texture" id=2]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_3 2.png" type="Texture" id=3]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_5 2.png" type="Texture" id=4]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_transition_1.png" type="Texture" id=5]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_7.png" type="Texture" id=6]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_transition_1 2.png" type="Texture" id=7]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_2 2.png" type="Texture" id=8]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_2.png" type="Texture" id=9]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_4 2.png" type="Texture" id=10]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_6 2.png" type="Texture" id=11]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_3.png" type="Texture" id=12]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_6.png" type="Texture" id=13]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_5.png" type="Texture" id=14]
+[ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_1.png" type="Texture" id=15]
+[ext_resource path="res://objects/Lever_Floor/Lever_Floor.gd" type="Script" id=16]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "right_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 2 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 7 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "switch_right_to_left",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "left_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 2 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "switch_left_to_right",
+"speed": 20.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 94.4465, 52.0049 )
+
+[node name="Lever_Floor" type="Area2D"]
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -8.21057, 0 )
+scale = Vector2( 1.04276, 1 )
+frames = SubResource( 1 )
+animation = "left_idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 75, -25 )
+shape = SubResource( 2 )
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
