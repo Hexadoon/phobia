@@ -19,6 +19,7 @@ func _ready():
 	door = get_parent().get_node("Door")
 	door_horizontal_sliding = get_parent().get_node("Door_Horizontal_Sliding")
 	door_vertical_sliding = get_parent().get_node("Door_Vertical_Sliding")
+	
 
 func _physics_process(delta):
 	"""
@@ -126,6 +127,8 @@ func _on_Sprite_animation_finished():
 		count += 1
 	if count == 16:
 		count = 0
+
+# Handles character interaction with doors
 
 func _on_Door_area_entered(area):
 	print("player collide with door")
