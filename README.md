@@ -6,7 +6,7 @@ You are a white, glowing, humanoid figure that starts in what appears to be sewe
 (Add screen shots)
 
 ### Specifications
-- Run on Windows, Mac, and Linux
+- Run on Windows, and Mac OSX
 - Coding in GDscript
 - Keyboard and Mouse/trackpad inputs only
 
