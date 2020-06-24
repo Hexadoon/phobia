@@ -16,7 +16,7 @@ func _on_Resume_Button_pressed():
 # Unpauses game and changes scene to controls scene
 func _on_Controls_Button_pressed():
 	get_tree().paused = not get_tree().paused
-	get_tree().change_scene("res://game/Controls (Pause Screen).tscn")
+	get_tree().change_scene("res://instructions/Controls (Pause Screen).tscn")
 
 # Unpauses game and changes scene to main menu scene
 func _on_Exit_To_Menu_Button_pressed():

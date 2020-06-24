@@ -9,6 +9,8 @@ var motion = Vector2()
 var idle_animation = "Idle" # Controls which idle animation is played.
 var flag = true # Will allow for pick up animation to play in full.
 
+var walking = false
+
 var door
 var door_horizontal_sliding
 var door_vertical_sliding
@@ -49,14 +51,19 @@ func _physics_process(delta):
 				if Input.is_action_pressed("ui_right"):
 					motion.x = SPEED
 					$Sprite.play("Crouch_Walk")
+					if !$AudioStreamPlayer2D.is_playing():
+						walking = true
 		
 				elif Input.is_action_pressed("ui_left"):
 					motion.x = -SPEED
 					$Sprite.play("Crouch_Walk")
+					if !$AudioStreamPlayer2D.is_playing():
+						walking = true
 				
 				else:
 					motion.x = 0
 					$Sprite.play("Crouch_Idle")
+					walking = false
 				
 			# Standing
 			else:
@@ -73,10 +80,14 @@ func _physics_process(delta):
 				if Input.is_action_pressed("ui_right"):
 					motion.x = SPEED
 					$Sprite.play("Walk")
+					if !$AudioStreamPlayer2D.is_playing():
+						walking = true
 		
 				elif Input.is_action_pressed("ui_left"):
 					motion.x = -SPEED
 					$Sprite.play("Walk")
+					if !$AudioStreamPlayer2D.is_playing():
+						walking = true
 					
 				elif Input.is_action_just_pressed("ui_pickup"):
 					$Sprite.play("Pick_Up")
@@ -85,6 +96,7 @@ func _physics_process(delta):
 				else:
 					motion.x = 0
 					$Sprite.play(idle_animation)
+					walking = false
 	
 			if Input.is_action_just_pressed("ui_up"):
 				
@@ -104,6 +116,15 @@ func _physics_process(delta):
 	# Handles gravity and applies motion.
 	motion.y += GRAVITY
 	motion = move_and_slide(motion, UP)
+	sound()
+
+func sound():
+	if walking == true && !$AudioStreamPlayer2D.is_playing():
+		$AudioStreamPlayer2D.play()
+	elif walking == false:
+		$AudioStreamPlayer2D.stop()
+	else:
+		pass
 
 func _on_Sprite_animation_finished():
 	"""

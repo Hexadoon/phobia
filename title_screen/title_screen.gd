@@ -24,7 +24,7 @@ func _on_Fade_In_fade_finished():
 	if scene == "Quit":
 		get_tree().quit()
 	elif scene == "New Game":
-		get_tree().change_scene("res://character/World.tscn")
+		get_tree().change_scene("res://game/World.tscn")
 	else:
 		pass
 

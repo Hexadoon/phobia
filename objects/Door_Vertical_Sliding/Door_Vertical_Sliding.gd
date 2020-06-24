@@ -35,10 +35,8 @@ func _on_AnimatedSprite_animation_finished():
 	Handles completion of door open / close animations.
 	"""
 	if open == true:
-		print("Door finished opening")
 		$AnimatedSprite.play("door_open_idle")
 		in_motion = false
 	else:
-		print("Door finished closing")
 		$AnimatedSprite.play("door_close_idle")
 		in_motion = false
