@@ -37,7 +37,7 @@ position = Vector2( 4357.2, -46.4573 )
 
 [node name="Death_Barrier" type="Node2D" parent="."]
 
-[node name="Death_Barrier" type="Area2D" parent="Death_Barrier"]
+[node name="Area2D" type="Area2D" parent="Death_Barrier"]
 position = Vector2( 2136.3, 1218.48 )
 gravity_vec = Vector2( 0, 0 )
 script = ExtResource( 5 )
@@ -45,7 +45,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Death_Barrier/Death_Barrier"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death_Barrier/Area2D"]
 shape = SubResource( 1 )
 
 [node name="Map" type="Node2D" parent="."]
@@ -69,5 +69,4 @@ position = Vector2( 321.611, 466.411 )
 [connection signal="area_exited" from="Doors/Door_Vertical_Sliding" to="Doors/Door_Vertical_Sliding" method="_on_Door_Vertical_Sliding_area_exited"]
 [connection signal="area_entered" from="Doors/Door_Horizontal_Sliding" to="Doors/Door_Horizontal_Sliding" method="_on_Door_Horizontal_Sliding_area_entered"]
 [connection signal="area_exited" from="Doors/Door_Horizontal_Sliding" to="Doors/Door_Horizontal_Sliding" method="_on_Door_Horizontal_Sliding_area_exited"]
-[connection signal="area_entered" from="Death_Barrier/Death_Barrier" to="Player/Player" method="_on_Area2D_area_entered"]
-[connection signal="area_entered" from="Death_Barrier/Death_Barrier" to="Death_Barrier/Death_Barrier" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Death_Barrier/Area2D" to="Death_Barrier/Area2D" method="_on_Area2D_area_entered"]

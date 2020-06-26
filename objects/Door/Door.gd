@@ -22,6 +22,3 @@ func _on_Door_area_entered(area):
 
 func _on_Door_area_exited(area):
 	cango = false
-
-
-
