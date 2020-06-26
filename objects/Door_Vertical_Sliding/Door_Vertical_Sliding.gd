@@ -40,3 +40,10 @@ func _on_AnimatedSprite_animation_finished():
 	else:
 		$AnimatedSprite.play("door_close_idle")
 		in_motion = false
+
+
+func _on_Door_Vertical_Sliding_area_entered(area):
+	in_range = true
+
+func _on_Door_Vertical_Sliding_area_exited(area):
+	in_range = false

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://character/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tilesets/TileMap.tscn" type="PackedScene" id=2]
+
+[node name="World" type="Node2D"]
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Map" instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 589829, 1, 65537, 589830, 1, 65537, 589831, 1, 65537, 589832, 1, 65537, 589835, 1, 65537, 589836, 1, 65537, 589837, 1, 65537, 589838, 1, 65537, 589839, 1, 65537, 589840, 1, 65537, 655360, 1, 65537, 655361, 1, 65537, 655362, 1, 65537, 655363, 1, 65537, 655364, 1, 65537, 655368, 1, 65537, 655369, 1, 65537, 655370, 1, 65537, 655376, 1, 65537, 655377, 1, 65537, 655378, 1, 65537, 655379, 1, 65537 )
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource( 1 )]

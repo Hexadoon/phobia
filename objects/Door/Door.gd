@@ -16,3 +16,12 @@ func _physics_process(delta):
 		delay += 1
 	else:
 		get_tree().change_scene(world_scene)
+	
+func _on_Door_area_entered(area):
+	cango = true
+
+func _on_Door_area_exited(area):
+	cango = false
+
+
+
