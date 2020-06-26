@@ -9,22 +9,31 @@ export var transition_type = 1
 var scene
 
 func _on_Quit_Button_pressed():
+	"""
+	Quits game / closes screen.
+	"""
 	scene = "Quit"
 	fade_out_music()
 	$"Fade In".show()
 	$"Fade In".fade_in()
 
 func _on_New_Game_Button_pressed():
+	"""
+	Controls fade in animation.
+	"""
 	scene = "New Game"
 	fade_out_music()
 	$"Fade In".show()
 	$"Fade In".fade_in()
 
 func _on_Fade_In_fade_finished():
+	"""
+	Handles scene changes.
+	"""
 	if scene == "Quit":
 		get_tree().quit()
 	elif scene == "New Game":
-		get_tree().change_scene("res://game/World.tscn")
+		get_tree().change_scene("res://Levels/Level_1/Main.tscn")
 	else:
 		pass
 

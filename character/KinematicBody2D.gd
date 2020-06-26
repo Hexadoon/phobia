@@ -1,31 +1,19 @@
 extends KinematicBody2D
 
+# CONSTANT VARIABLES
 const UP = Vector2(0, -1)
 const SPEED = 500 #200
 const GRAVITY = 30
 const JUMP_FORCE = -500
 
 var motion = Vector2()
+
+var count = 0
 var idle_animation = "Idle" # Controls which idle animation is played.
+
 var flag = true # Will allow for pick up animation to play in full.
 
 var walking = false
-
-var door
-var door_locked
-var door_horizontal_sliding
-var door_vertical_sliding
-var key
-
-var count = 0
-
-func _ready():
-	door = get_parent().get_node("Door")
-	door_locked = get_parent().get_node("Door_Locked")
-	key = get_parent().get_node("Key")
-	door_horizontal_sliding = get_parent().get_node("Door_Horizontal_Sliding")
-	door_vertical_sliding = get_parent().get_node("Door_Vertical_Sliding")
-	
 
 func _physics_process(delta):
 	"""
@@ -152,66 +140,3 @@ func _on_Sprite_animation_finished():
 		count += 1
 	if count == 16:
 		count = 0
-
-# Handles character interaction with doors
-
-func _on_Door_area_entered(area):
-	print("player collide with door")
-	door.cango = true
-	pass
-
-func _on_Door_area_exited(area):
-	print("player exit from door")
-	door.cango = false
-	pass
-
-func _on_Door_Locked_area_entered(area):
-	print("player collide with door")
-	if key.hold == true:
-		door_locked.cango = true
-	else:
-		pass
-
-func _on_Door_Locked_area_exited(area):
-	print("player exit from door")
-	door_locked.cango = false
-	pass
-
-func _on_Door_Horizontal_Sliding_area_entered(area):
-	print("player collide with door")
-	door_horizontal_sliding.in_range = true
-	pass
-
-
-func _on_Door_Horizontal_Sliding_area_exited(area):
-	print("player exit from door")
-	door_horizontal_sliding.in_range = false
-	pass
-
-
-func _on_Door_Vertical_Sliding_area_entered(area):
-	print("player collide with door")
-	door_vertical_sliding.in_range = true
-	pass
-
-
-func _on_Door_Vertical_Sliding_area_exited(area):
-	print("player exit from door")
-	door_vertical_sliding.in_range = false
-	pass
-
-func _on_Key_area_entered(area):
-	if key.hold == true:
-		pass
-	else:
-		print("player can pick up key")
-		key.canpickup = true
-		pass
-
-func _on_Key_area_exited(area):
-	if key.hold == true:
-		pass
-	else:
-		print("player cannot pick up key")
-		key.canpickup = false
-		pass

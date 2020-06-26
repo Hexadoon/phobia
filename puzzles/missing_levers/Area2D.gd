@@ -1,6 +1,7 @@
 extends Area2D
 
 var count
+onready var player_vars = get_node("/root/PlayerVariables")
 
 export(String, FILE, "*.tscn") var world_scene
 
@@ -13,12 +14,7 @@ func _on_Area2D_area_entered(area):
 	Determines win condition of puzzle.
 	"""
 	if count == 3:
-		print("Puzzle complete... you win!")
+		player_vars.FLAG = true
+		get_tree().change_scene(world_scene)
 	else:
-		print("Try a different amount of levers")
-		
-	# Could add a door that takes you to a diff part of puzzle
-	# if you are wrong or right?
-	
-	# Can replace with a door that can only open when ghe count reaches
-	# a certain number etc.
+		get_tree().reload_current_scene()
