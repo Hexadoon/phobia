@@ -1,19 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://pause_screen/Pause Screen.gd" type="Script" id=1]
-[ext_resource path="res://fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=3]
-
-[sub_resource type="DynamicFont" id=1]
-size = 40
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 40
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 40
-font_data = ExtResource( 3 )
+[ext_resource path="res://title_screen/tileset/TileMap.tscn" type="PackedScene" id=2]
 
 [node name="Pause Screen" type="Control"]
 pause_mode = 2
@@ -40,36 +28,45 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 494.0
+margin_left = 390.0
 margin_top = 314.0
-margin_right = 785.0
+margin_right = 890.0
 margin_bottom = 614.0
 rect_min_size = Vector2( 250, 300 )
 alignment = 1
 
 [node name="Resume Button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 62.0
-margin_right = 291.0
-margin_bottom = 118.0
-custom_fonts/font = SubResource( 1 )
-text = "Resume"
+margin_top = 33.0
+margin_right = 500.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 0, 75 )
 flat = true
+
+[node name="TileMap" parent="CenterContainer/VBoxContainer/Resume Button" instance=ExtResource( 2 )]
+position = Vector2( 129.911, 4.70358 )
+tile_data = PoolIntArray( 0, 0, 0 )
 
 [node name="Controls Button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 122.0
-margin_right = 291.0
-margin_bottom = 178.0
-custom_fonts/font = SubResource( 2 )
-text = "Controls"
+margin_top = 112.0
+margin_right = 500.0
+margin_bottom = 187.0
+rect_min_size = Vector2( 0, 75 )
 flat = true
 
+[node name="TileMap" parent="CenterContainer/VBoxContainer/Controls Button" instance=ExtResource( 2 )]
+position = Vector2( 69.8062, -7.75623 )
+tile_data = PoolIntArray( 0, 15, 0 )
+
 [node name="Exit To Menu Button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 182.0
-margin_right = 291.0
-margin_bottom = 238.0
-custom_fonts/font = SubResource( 3 )
-text = "Exit To Menu"
+margin_top = 191.0
+margin_right = 500.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 500, 75 )
 flat = true
+
+[node name="TileMap" parent="CenterContainer/VBoxContainer/Exit To Menu Button" instance=ExtResource( 2 )]
+position = Vector2( 150.693, 6.64819 )
+tile_data = PoolIntArray( 65534, 1, 0 )
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Resume Button" to="." method="_on_Resume_Button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Controls Button" to="." method="_on_Controls_Button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Exit To Menu Button" to="." method="_on_Exit_To_Menu_Button_pressed"]

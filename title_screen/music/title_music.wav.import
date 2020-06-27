@@ -2,11 +2,13 @@
 
 importer="wav"
 type="AudioStreamSample"
-valid=false
+path="res://.import/title_music.wav-aa271c6922a6aa8bf68441173ddc24d3.sample"
 
 [deps]
 
 source_file="res://title_screen/music/title_music.wav"
+dest_files=[ "res://.import/title_music.wav-aa271c6922a6aa8bf68441173ddc24d3.sample" ]
+
 [params]
 
 force/8_bit=false
