@@ -65,9 +65,7 @@ position = Vector2( 321.611, 466.411 )
 visible = false
 [connection signal="area_entered" from="Keys/Key" to="Keys/Key" method="_on_Key_area_entered"]
 [connection signal="area_exited" from="Keys/Key" to="Keys/Key" method="_on_Key_area_exited"]
-[connection signal="area_entered" from="Doors/Door" to="Player/Player" method="_on_Door_area_entered"]
 [connection signal="area_entered" from="Doors/Door" to="Doors/Door" method="_on_Door_area_entered"]
-[connection signal="area_exited" from="Doors/Door" to="Player/Player" method="_on_Door_area_exited"]
 [connection signal="area_exited" from="Doors/Door" to="Doors/Door" method="_on_Door_area_exited"]
 [connection signal="area_entered" from="Doors/Door_Locked" to="Doors/Door_Locked" method="_on_Door_Locked_area_entered"]
 [connection signal="area_exited" from="Doors/Door_Locked" to="Doors/Door_Locked" method="_on_Door_Locked_area_exited"]
