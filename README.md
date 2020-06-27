@@ -4,7 +4,8 @@ A puzzle-based ambient/horror game.
 You are a white, glowing, humanoid figure that starts in what appears to be sewers. As you proceed through the puzzles and levels you begin to "ascend" until at some point you appear above ground facing the night sky. However, as you complete puzzles and pass levels, your light glow gets dimmer and dimmer.
 
 (Add screen shots)
-
+![alt text](https://github.com/[B170284]/[phobia]/blob/[B170284-Screenshots]/Screenshot 2020-06-27 at 11.44.52 AM.png?raw=true)
+![alt text](https://github.com/[B170284]/[phobia]/blob/[B170284-Screenshots]/Screenshot 2020-06-27 at 11.46.30 AM.png?raw=true)
 ### Specifications
 - Run on Windows, and Mac OSX
 - Coding in GDscript
