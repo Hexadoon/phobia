@@ -1,4 +1,4 @@
 extends Node2D
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://game/World.tscn")
+	get_tree().change_scene("res://Levels/Level_1/Main.tscn")
