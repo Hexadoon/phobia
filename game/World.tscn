@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://objects/Door_Horizontal_Sliding/Door_Horizontal_Sliding.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Door_Vertical_Sliding/Door_Vertical_Sliding.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://game/World.gd" type="Script" id=8]
 [ext_resource path="res://objects/Key/Key.tscn" type="PackedScene" id=9]
 [ext_resource path="res://objects/Door_Locked/Door_Locked.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/Pressure Plate/Pressure Plate.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objects/Box/Box.tscn" type="PackedScene" id=12]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 8 )
@@ -25,6 +27,9 @@ position = Vector2( 101.195, 276 )
 
 [node name="Door_Vertical_Sliding" parent="." instance=ExtResource( 2 )]
 position = Vector2( -312, 264 )
+
+[node name="Box" parent="." instance=ExtResource( 12 )]
+position = Vector2( 672, 352 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 364, 332 )
@@ -44,6 +49,9 @@ volume_db = -40.0
 
 [node name="Key" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1504, 480 )
+
+[node name="Pressure Plate" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1280, 416 )
 [connection signal="area_entered" from="Door" to="Player" method="_on_Door_area_entered"]
 [connection signal="area_exited" from="Door" to="Player" method="_on_Door_area_exited"]
 [connection signal="area_entered" from="Door_Locked" to="Player" method="_on_Door_Locked_area_entered"]
@@ -55,3 +63,5 @@ position = Vector2( 1504, 480 )
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]
 [connection signal="area_entered" from="Key" to="Player" method="_on_Key_area_entered"]
 [connection signal="area_exited" from="Key" to="Player" method="_on_Key_area_exited"]
+[connection signal="area_entered" from="Pressure Plate" to="Pressure Plate" method="_on_Pressure_Plate_area_entered"]
+[connection signal="area_exited" from="Pressure Plate" to="Pressure Plate" method="_on_Pressure_Plate_area_exited"]
