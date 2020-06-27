@@ -3,6 +3,8 @@ A puzzle-based ambient/horror game.
 
 You are a white, glowing, humanoid figure that starts in what appears to be sewers. As you proceed through the puzzles and levels you begin to "ascend" until at some point you appear above ground facing the night sky. However, as you complete puzzles and pass levels, your light glow gets dimmer and dimmer.
 
+![Screenshot 2020-06-27 at 11 44 52 AM](https://user-images.githubusercontent.com/56122178/85929933-85e92900-b886-11ea-9caa-35e1d9853f35.png)
+![Screenshot 2020-06-27 at 11 46 30 AM](https://user-images.githubusercontent.com/56122178/85929931-82ee3880-b886-11ea-90e1-0ea974b0450a.png)
 
 ### Specifications
 - Run on Windows, and Mac OSX
