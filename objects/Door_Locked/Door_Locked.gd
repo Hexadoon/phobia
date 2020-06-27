@@ -17,8 +17,10 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_accept") and cango == true:
 			print("player unlocked door")
 			delay = 1
-		elif Input.is_action_just_pressed("ui_accept") and cango == false:
+		elif Input.is_action_just_pressed("ui_accept") and cango == true and key.hold == false:
 			print("door is locked")
+		elif Input.is_action_just_pressed("ui_accept") and cango == false:
+			print("not on door")
 		else:
 			$AnimatedSprite.play("locked_door_close")
 	elif delay < 70:
