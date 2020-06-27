@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 # CONSTANT VARIABLES
 const UP = Vector2(0, -1)
-const SPEED = 500 #200
+const SPEED = 500
 const GRAVITY = 30
 const JUMP_FORCE = -500
 
