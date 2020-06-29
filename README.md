@@ -12,7 +12,7 @@ You are a white, glowing, humanoid figure that starts in what appears to be sewe
 - Keyboard and Mouse/trackpad inputs only
 
 ### How To Install
-(Installation instructions for godot then game)
+In the "Dist" folder download the .exe file for Windows and the .dmg file for Mac OS.
 
 ### How to Contribute
 #### Submitting Issues
