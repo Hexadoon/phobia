@@ -19,6 +19,10 @@ config/name="Phobia"
 run/main_scene="res://title_screen/Title Screen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerVariables="*res://Player_Variables.gd"
+
 [display]
 
 window/size/width=1280

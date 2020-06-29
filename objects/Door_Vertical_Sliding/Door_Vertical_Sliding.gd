@@ -16,12 +16,14 @@ func _physics_process(delta):
 			open = true
 			in_motion = true
 			$AnimatedSprite.play("door_open")
+			$AudioStreamPlayer.play()
 		
 		elif Input.is_action_just_pressed("ui_accept") and open == true and \
 		in_range == true:
 			open = false
 			in_motion = true
 			$AnimatedSprite.play("door_close")
+			$AudioStreamPlayer.play()
 		
 		elif open == true:
 			$AnimatedSprite.play("door_open_idle")
@@ -35,10 +37,15 @@ func _on_AnimatedSprite_animation_finished():
 	Handles completion of door open / close animations.
 	"""
 	if open == true:
-		print("Door finished opening")
 		$AnimatedSprite.play("door_open_idle")
 		in_motion = false
 	else:
-		print("Door finished closing")
 		$AnimatedSprite.play("door_close_idle")
 		in_motion = false
+
+
+func _on_Door_Vertical_Sliding_area_entered(area):
+	in_range = true
+
+func _on_Door_Vertical_Sliding_area_exited(area):
+	in_range = false

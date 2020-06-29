@@ -9,6 +9,7 @@ func _physics_process(delta):
 	if delay == 0:
 		if Input.is_action_just_pressed("ui_accept") and cango == true:
 			delay = 1
+			$AudioStreamPlayer.play()
 		else:
 			$AnimatedSprite.play("door_close")
 	elif delay < 70:
@@ -16,3 +17,9 @@ func _physics_process(delta):
 		delay += 1
 	else:
 		get_tree().change_scene(world_scene)
+	
+func _on_Door_area_entered(area):
+	cango = true
+
+func _on_Door_area_exited(area):
+	cango = false
