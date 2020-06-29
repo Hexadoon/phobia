@@ -34,3 +34,15 @@ Phobia Uses the following software
 - Photoshop
 - Animator (check)
  
+### Developers
+
+Project Managers
+- Brandon Fang
+- Phoenix Arroyo
+
+Software Developers
+- Brandon Kwinter
+- Jason Lin
+
+Artists
+- Myrissa Zahora
