@@ -4,6 +4,7 @@
 [ext_resource path="res://instructions/Controls (Pause Screen).gd" type="Script" id=2]
 
 [node name="Controls (Pause Screen)" type="Control"]
+pause_mode = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

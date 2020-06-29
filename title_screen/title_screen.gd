@@ -8,6 +8,9 @@ export var transition_type = 1
 # Keeps track of which button was pressed
 var scene
 
+func _ready():
+	$"Menu/Center Row/Buttons/New Game Button".grab_focus()
+
 func _on_Quit_Button_pressed():
 	"""
 	Quits game / closes screen.

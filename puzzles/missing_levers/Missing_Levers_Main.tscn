@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilesets/TileMap.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://fonts/Montserrat-ExtraBold_size_48.tres" type="DynamicFont" id=4]
 [ext_resource path="res://puzzles/missing_levers/Area2D.gd" type="Script" id=5]
 [ext_resource path="res://objects/Lever_Wall/Lever_Wall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://instructions/Controls (Pause Screen).tscn" type="PackedScene" id=7]
+[ext_resource path="res://pause_screen/Pause Screen.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 100, 50 )
@@ -97,6 +99,16 @@ script = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Screen" parent="CanvasLayer" instance=ExtResource( 8 )]
+visible = false
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Controls (Pause Screen)" parent="CanvasLayer2" instance=ExtResource( 7 )]
+visible = false
 [connection signal="area_entered" from="Levers/Lever_Floor" to="Levers/Lever_Floor" method="_on_Lever_Floor_area_entered"]
 [connection signal="area_exited" from="Levers/Lever_Floor" to="Levers/Lever_Floor" method="_on_Lever_Floor_area_exited"]
 [connection signal="area_entered" from="Levers/Lever_Floor2" to="Levers/Lever_Floor2" method="_on_Lever_Floor2_area_entered"]

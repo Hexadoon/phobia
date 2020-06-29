@@ -20,7 +20,6 @@ func _on_Resume_Button_pressed():
 
 # Unpauses game and changes scene to controls scene
 func _on_Controls_Button_pressed():
-	get_tree().paused = not get_tree().paused
 	visible = not visible
 	controls_scene.visible = not visible
 
