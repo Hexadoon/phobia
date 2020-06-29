@@ -16,12 +16,14 @@ func _physics_process(delta):
 			open = true
 			in_motion = true
 			$AnimatedSprite.play("door_open")
+			$AudioStreamPlayer.play()
 		
 		elif Input.is_action_just_pressed("ui_accept") and open == true and \
 		in_range == true:
 			open = false
 			in_motion = true
 			$AnimatedSprite.play("door_close")
+			$AudioStreamPlayer.play()
 		
 		elif open == true:
 			$AnimatedSprite.play("door_open_idle")

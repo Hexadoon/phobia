@@ -41,14 +41,14 @@ func _on_Fade_In_fade_finished():
 		pass
 
 func _on_AudioStreamPlayer2D_finished():
-	var background_music = $"Background Music/AudioStreamPlayer2D"
+	var background_music = $"Background Music/AudioStreamPlayer"
 	background_music.play()
 	
 func fade_out_music():
 	"""
 	Fades out background music on scene change.
 	"""
-	var background_music = $"Background Music/AudioStreamPlayer2D"
+	var background_music = $"Background Music/AudioStreamPlayer"
 	tween_out.interpolate_property(background_music, "volume_db", -12.5, -80, 
 	transition_duration, transition_type, Tween.EASE_IN, 0)
 	tween_out.start()

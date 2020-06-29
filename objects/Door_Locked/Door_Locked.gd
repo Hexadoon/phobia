@@ -17,6 +17,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_accept") and cango == true:
 			print("player unlocked door")
 			delay = 1
+			$AudioStreamPlayer.play()
 		elif Input.is_action_just_pressed("ui_accept") and cango == true and key.hold == false:
 			print("door is locked")
 		elif Input.is_action_just_pressed("ui_accept") and cango == false:
