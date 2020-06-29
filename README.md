@@ -42,7 +42,7 @@ Project Managers
 
 Software Developers
 - Brandon Kwinter
-- Jason Lin
+- Joshua Lin
 
 Artists
 - Myrissa Zahora
