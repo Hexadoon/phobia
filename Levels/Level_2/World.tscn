@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilesets/TileMap.tscn" type="PackedScene" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://objects/Pressure Plate/Pressure Plate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Level_2/World.gd" type="Script" id=5]
 [ext_resource path="res://objects/Door_Locked/Door_Locked.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Levels/Level_2/Key.gd" type="Script" id=7]
+[ext_resource path="res://objects/Key/Key.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Levels/Level_2/Lever.gd" type="Script" id=8]
 [ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_6 2.png" type="Texture" id=9]
 [ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_3.png" type="Texture" id=10]
@@ -25,19 +25,20 @@
 [ext_resource path="res://objects/Lever_Floor/images/floor/phobia_wallswitchfloor_5.png" type="Texture" id=23]
 [ext_resource path="res://Levels/Level_2/Area2D.gd" type="Script" id=24]
 [ext_resource path="res://objects/Door_Vertical_Sliding/Door_Vertical_Sliding.tscn" type="PackedScene" id=25]
-[ext_resource path="res://objects/Key/image/key.png" type="Texture" id=26]
 [ext_resource path="res://instructions/Controls (Pause Screen).tscn" type="PackedScene" id=27]
 [ext_resource path="res://pause_screen/Pause Screen.tscn" type="PackedScene" id=28]
 [ext_resource path="res://objects/sfx/lever_sound.wav" type="AudioStream" id=29]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 41.1858, 40.4759 )
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 19 ) ],
 "loop": true,
 "name": "right_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "left_idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 13 ), ExtResource( 22 ), ExtResource( 9 ), ExtResource( 23 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 15 ), ExtResource( 14 ) ],
@@ -45,21 +46,16 @@ animations = [ {
 "name": "switch_right_to_left",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "left_idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 23 ), ExtResource( 9 ), ExtResource( 22 ), ExtResource( 13 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "switch_left_to_right",
 "speed": 20.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 94.4465, 52.0049 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 4054.45, 41.5254 )
 
 [node name="World" type="Node2D"]
@@ -67,20 +63,7 @@ script = ExtResource( 5 )
 
 [node name="Keys" type="Node2D" parent="."]
 
-[node name="Key" type="Area2D" parent="Keys"]
-visible = false
-position = Vector2( -5126.2, 609.691 )
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Keys/Key"]
-texture = ExtResource( 26 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Keys/Key"]
-position = Vector2( -3, 1 )
-shape = SubResource( 1 )
+[node name="Key" parent="Keys" instance=ExtResource( 7 )]
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -105,12 +88,12 @@ num_tile = "Invisible Walls/Lever1_Tile"
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Levers/Lever"]
 position = Vector2( -8.21057, 0 )
 scale = Vector2( 1.04276, 1 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "left_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Levers/Lever"]
 position = Vector2( 75, -25 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Lever2" type="Area2D" parent="Levers"]
 position = Vector2( -2920.5, 255.57 )
@@ -124,12 +107,12 @@ num_tile = "Invisible Walls/Lever2_Tile"
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Levers/Lever2"]
 position = Vector2( -8.21057, 0 )
 scale = Vector2( 1.04276, 1 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "left_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Levers/Lever2"]
 position = Vector2( 75, -25 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Lever3" type="Area2D" parent="Levers"]
 position = Vector2( -834.625, 254.734 )
@@ -143,12 +126,12 @@ num_tile = "Invisible Walls/Lever3_Tile"
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Levers/Lever3"]
 position = Vector2( -8.21057, 0 )
 scale = Vector2( 1.04276, 1 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "left_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Levers/Lever3"]
 position = Vector2( 75, -25 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Plates" type="Node2D" parent="."]
 
@@ -241,7 +224,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DIE/Area2D"]
 position = Vector2( 181.516, -254.122 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
