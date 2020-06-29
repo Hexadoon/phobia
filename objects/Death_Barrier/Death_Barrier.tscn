@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Levels/Level_1/misc_scripts/Death_Barrier.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4000, 100 )
+
+[node name="Death_Barrier" type="Area2D"]
+position = Vector2( 3454.76, 1014.02 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+[connection signal="area_entered" from="." to="." method="_on_Death_Barrier_area_entered"]
