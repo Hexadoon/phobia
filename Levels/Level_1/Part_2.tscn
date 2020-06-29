@@ -1,14 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilesets/TileMap.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/Level_1/misc_scripts/Death_Barrier.gd" type="Script" id=3]
+[ext_resource path="res://objects/Death_Barrier/Death_Barrier.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/Door/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://pause_screen/Pause Screen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://instructions/Controls (Pause Screen).tscn" type="PackedScene" id=6]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 2901.55, 100 )
 
 [node name="World" type="Node2D"]
 
@@ -30,15 +27,7 @@ position = Vector2( 494.488, 399.087 )
 
 [node name="Death Barrier" type="Node2D" parent="."]
 
-[node name="Death_Barrier" type="Area2D" parent="Death Barrier"]
-position = Vector2( 3454.76, 1014.02 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Death Barrier/Death_Barrier"]
-shape = SubResource( 1 )
+[node name="Death_Barrier" parent="Death Barrier" instance=ExtResource( 3 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -51,4 +40,3 @@ visible = false
 visible = false
 [connection signal="area_entered" from="Doors/Door" to="Doors/Door" method="_on_Door_area_entered"]
 [connection signal="area_exited" from="Doors/Door" to="Doors/Door" method="_on_Door_area_exited"]
-[connection signal="area_entered" from="Death Barrier/Death_Barrier" to="Death Barrier/Death_Barrier" method="_on_Death_Barrier_area_entered"]
