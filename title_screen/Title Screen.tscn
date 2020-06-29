@@ -53,8 +53,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/Center Row"]
-anchor_top = -0.2
-anchor_bottom = -0.2
 margin_right = 519.0
 margin_bottom = 480.0
 size_flags_horizontal = 3
@@ -106,7 +104,6 @@ size_flags_vertical = 3
 position = Vector2( 501, 74 )
 scale = Vector2( 0.455484, 0.455484 )
 frames = SubResource( 1 )
-frame = 2
 playing = true
 
 [node name="Version" type="Label" parent="Menu"]
