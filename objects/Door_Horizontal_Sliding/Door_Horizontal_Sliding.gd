@@ -18,7 +18,7 @@ func _physics_process(delta):
 	"""
 	overlap = get_overlapping_areas()
 	
-	if player_vars.FLAG == true and in_motion == false:
+	if in_motion == false:
 		if Input.is_action_just_pressed("ui_accept") and open == false and \
 		in_range == true:
 			open = true
