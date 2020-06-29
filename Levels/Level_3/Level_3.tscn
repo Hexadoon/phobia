@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://tilesets/TileMap.tscn" type="PackedScene" id=1]
-[ext_resource path="res://objects/Box/images/box.png" type="Texture" id=2]
+[ext_resource path="res://objects/death_wall.png" type="Texture" id=2]
 [ext_resource path="res://character/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Level_3/Barrier.gd" type="Script" id=4]
 [ext_resource path="res://objects/Death_Barrier/Death_Barrier.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/Door_Locked/Door_Locked.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/Key/Key.tscn" type="PackedScene" id=7]
+[ext_resource path="res://pause_screen/Pause Screen.tscn" type="PackedScene" id=8]
+[ext_resource path="res://instructions/Controls (Pause Screen).tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 100.918, 1000 )
@@ -36,7 +38,7 @@ tile_data = PoolIntArray( -196616, 2, 0, -196615, 2, 1, -196614, 2, 1, -196613, 
 [node name="Moving_Death_Barrier" type="Node2D" parent="."]
 modulate = Color( 0, 0, 0, 1 )
 self_modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -211.086, -13.6699 )
+position = Vector2( 614.587, 1902.32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -45,19 +47,31 @@ __meta__ = {
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Moving_Death_Barrier/Barrier"]
-position = Vector2( -1456.51, 247.848 )
-scale = Vector2( 15.5215, 15.0365 )
+position = Vector2( -1584.59, -1890.44 )
+scale = Vector2( 5.94529, 3.80394 )
 texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="Moving_Death_Barrier/Barrier"]
+position = Vector2( -1182.74, -1643.74 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Moving_Death_Barrier/Barrier/Area2D"]
+position = Vector2( -105.855, 105.856 )
 shape = SubResource( 1 )
 
 [node name="Death_Barrier" type="Node2D" parent="."]
 
 [node name="Death_Barrier" parent="Death_Barrier" instance=ExtResource( 5 )]
 position = Vector2( 4939.56, 1429.13 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Screen" parent="CanvasLayer" instance=ExtResource( 8 )]
+visible = false
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Controls (Pause Screen)" parent="CanvasLayer2" instance=ExtResource( 9 )]
+visible = false
 [connection signal="area_entered" from="Door/Door_Locked" to="Door/Door_Locked" method="_on_Door_Locked_area_entered"]
 [connection signal="area_exited" from="Door/Door_Locked" to="Door/Door_Locked" method="_on_Door_Locked_area_exited"]
 [connection signal="area_entered" from="Keys/Key" to="Keys/Key" method="_on_Key_area_entered"]

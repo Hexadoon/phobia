@@ -86,6 +86,7 @@ shape = SubResource( 1 )
 
 [node name="Door_Locked" parent="Doors" instance=ExtResource( 6 )]
 position = Vector2( 1913.16, 396.538 )
+world_scene = "res://Levels/Level_3/Level_3.tscn"
 
 [node name="Door_Vertical_Sliding" parent="Doors" instance=ExtResource( 25 )]
 position = Vector2( -5132.31, 396.757 )
@@ -188,7 +189,9 @@ collision_layer = 2
 collision_mask = 0
 tile_data = PoolIntArray( 655375, 0, 0, 655376, 0, 1, 655377, 0, 1, 655378, 0, 2, 720911, 0, 131072, 720912, 0, 131073, 720913, 0, 131073, 720914, 0, 131074 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource( 1 )]
 position = Vector2( 309.585, 455.663 )
 
 [node name="Invisible Walls" type="Node2D" parent="."]
