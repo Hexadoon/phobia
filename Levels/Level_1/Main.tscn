@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://tilesets/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://character/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://pause_screen/Pause Screen.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Levels/sounds/ambience_sound.wav" type="AudioStream" id=10]
 [ext_resource path="res://Levels/Level_1/Main.gd" type="Script" id=11]
+[ext_resource path="res://instructions/Controls (Pause Screen).tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000, 100 )
@@ -70,6 +71,11 @@ visible = false
 [node name="Background Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 10 )
 volume_db = -40.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Controls (Pause Screen)" parent="CanvasLayer2" instance=ExtResource( 12 )]
+visible = false
 [connection signal="area_entered" from="Keys/Key" to="Keys/Key" method="_on_Key_area_entered"]
 [connection signal="area_exited" from="Keys/Key" to="Keys/Key" method="_on_Key_area_exited"]
 [connection signal="area_entered" from="Doors/Door" to="Doors/Door" method="_on_Door_area_entered"]
