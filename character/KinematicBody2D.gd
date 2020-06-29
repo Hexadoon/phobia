@@ -107,7 +107,7 @@ func _physics_process(delta):
 			$Sprite.flip_h = true
 	# Handles gravity and applies motion.
 	motion.y += GRAVITY
-	motion = move_and_slide(motion, UP)
+	motion = move_and_slide(motion, UP)	
 	sound()
 
 func sound():

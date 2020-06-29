@@ -119,8 +119,7 @@ visible = false
 
 [node name="Background Music" type="Node" parent="."]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Background Music"]
-position = Vector2( 640, 512 )
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Background Music"]
 stream = ExtResource( 2 )
 volume_db = -12.5
 autoplay = true

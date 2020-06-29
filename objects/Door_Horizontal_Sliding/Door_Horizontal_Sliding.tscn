@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://objects/Door_Horizontal_Sliding/images/phobia_door2_16.png" type="Texture" id=1]
 [ext_resource path="res://objects/Door_Horizontal_Sliding/images/phobia_door2_13.png" type="Texture" id=2]
@@ -11,27 +11,28 @@
 [ext_resource path="res://objects/Door_Horizontal_Sliding/images/phobia_door2_12.png" type="Texture" id=9]
 [ext_resource path="res://objects/Door_Horizontal_Sliding/images/phobia_door2_14.png" type="Texture" id=10]
 [ext_resource path="res://objects/Door_Horizontal_Sliding/images/phobia_door2_9.png" type="Texture" id=11]
+[ext_resource path="res://objects/sfx/door_sound.wav" type="AudioStream" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "door_open_idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "door_close_idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "door_open",
-"speed": 10.0
+"name": "door_open_idle",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "door_close",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "door_open",
 "speed": 10.0
 } ]
 
@@ -51,4 +52,8 @@ animation = "door_close_idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 5, 35 )
 shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -20.0
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

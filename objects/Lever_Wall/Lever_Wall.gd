@@ -26,6 +26,7 @@ func _physics_process(delta):
 			
 			lever_count.count += 1
 			on_screen_counter.text = str(lever_count.count)
+			$AudioStreamPlayer.play()
 		
 		elif Input.is_action_just_pressed("ui_accept") and up == false and \
 		in_range == true:
@@ -35,6 +36,7 @@ func _physics_process(delta):
 			
 			lever_count.count -= 1
 			on_screen_counter.text = str(lever_count.count)
+			$AudioStreamPlayer.play()
 			
 		elif up == true:
 			$AnimatedSprite.play("up_idle")
