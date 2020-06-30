@@ -11,6 +11,8 @@ var floor2
 var floor3
 var key
 
+var timer = 0
+
 var firstplate = false
 var secondplate = false
 var thirdplate = false
@@ -69,6 +71,13 @@ func _physics_process(delta):
 			key.visible = true
 	else:
 		player_vars.FLAG = false
+	
+	if timer == 700:
+		$Chains.play()
+	timer += 1
 
 func _on_AudioStreamPlayer_finished():
 	$AudioStreamPlayer.play()
+
+func _on_Chains_finished():
+	timer = 0
