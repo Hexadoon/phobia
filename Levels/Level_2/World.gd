@@ -28,6 +28,7 @@ func _ready():
 	floor2 = get_node("Invisible Walls/Floor2")
 	floor3 = get_node("Invisible Walls/Floor3")
 	key = get_node("Keys/Key")
+	$AudioStreamPlayer.play()
 	
 
 func _physics_process(delta):
@@ -68,3 +69,7 @@ func _physics_process(delta):
 		player_vars.FLAG = true
 	else:
 		player_vars.FLAG = false
+
+
+func _on_AudioStreamPlayer_finished():
+	$AudioStreamPlayer.play()

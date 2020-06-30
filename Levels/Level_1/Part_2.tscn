@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilesets/TileMap.tscn" type="PackedScene" id=2]
@@ -6,8 +6,11 @@
 [ext_resource path="res://objects/Door/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://pause_screen/Pause Screen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://instructions/Controls (Pause Screen).tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Level_1/Part_2.gd" type="Script" id=7]
+[ext_resource path="res://Levels/sounds/ambience_sound.wav" type="AudioStream" id=8]
 
 [node name="World" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -38,5 +41,10 @@ visible = false
 
 [node name="Controls (Pause Screen)" parent="CanvasLayer2" instance=ExtResource( 6 )]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -20.0
 [connection signal="area_entered" from="Doors/Door" to="Doors/Door" method="_on_Door_area_entered"]
 [connection signal="area_exited" from="Doors/Door" to="Doors/Door" method="_on_Door_area_exited"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
