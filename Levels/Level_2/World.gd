@@ -11,6 +11,8 @@ var floor2
 var floor3
 var key
 
+var timer = 0
+
 var firstplate = false
 var secondplate = false
 var thirdplate = false
@@ -28,6 +30,7 @@ func _ready():
 	floor2 = get_node("Invisible Walls/Floor2")
 	floor3 = get_node("Invisible Walls/Floor3")
 	key = get_node("Keys/Key")
+	$AudioStreamPlayer.play()
 	
 
 func _physics_process(delta):
@@ -63,8 +66,18 @@ func _physics_process(delta):
 		floor1.visible = true
 		floor1.set_collision_layer(1)
 	if firstplate and secondplate and thirdplate:
+		player_vars.FLAG = true
 		if !key.hold:
 			key.visible = true
-		player_vars.FLAG = true
 	else:
 		player_vars.FLAG = false
+	
+	if timer == 700:
+		$Chains.play()
+	timer += 1
+
+func _on_AudioStreamPlayer_finished():
+	$AudioStreamPlayer.play()
+
+func _on_Chains_finished():
+	timer = 0

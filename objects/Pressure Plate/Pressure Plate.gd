@@ -15,6 +15,7 @@ func _physics_process(delta):
 func _on_Pressure_Plate_area_entered(area):
 	is_pushed1 = true
 	$AnimatedSprite.play("plate_active")
+	$AudioStreamPlayer.play()
 
 func _on_Pressure_Plate_area_exited(area):
 	if overlap.size() > 1:
@@ -26,6 +27,7 @@ func _on_Pressure_Plate_area_exited(area):
 func _on_Pressure_Plate_2_area_entered(area):
 	is_pushed2 = true
 	$AnimatedSprite.play("plate_active")
+	$AudioStreamPlayer.play()
 
 func _on_Pressure_Plate_2_area_exited(area):
 	if overlap.size() > 1:
@@ -37,6 +39,7 @@ func _on_Pressure_Plate_2_area_exited(area):
 func _on_Pressure_Plate_3_area_entered(area):
 	is_pushed3 = true
 	$AnimatedSprite.play("plate_active")
+	$AudioStreamPlayer.play()
 
 func _on_Pressure_Plate_3_area_exited(area):
 	if overlap.size() > 1:
@@ -48,6 +51,7 @@ func _on_Pressure_Plate_3_area_exited(area):
 func _on_Pressure_Plate_4_area_entered(area):
 	is_pushed4 = true
 	$AnimatedSprite.play("plate_active")
+	$AudioStreamPlayer.play()
 
 func _on_Pressure_Plate_4_area_exited(area):
 	if overlap.size() > 1:

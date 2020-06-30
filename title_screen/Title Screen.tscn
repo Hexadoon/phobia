@@ -53,8 +53,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/Center Row"]
-anchor_top = -0.2
-anchor_bottom = -0.2
 margin_right = 519.0
 margin_bottom = 480.0
 size_flags_horizontal = 3
@@ -106,7 +104,7 @@ size_flags_vertical = 3
 position = Vector2( 501, 74 )
 scale = Vector2( 0.455484, 0.455484 )
 frames = SubResource( 1 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Version" type="Label" parent="Menu"]
@@ -122,7 +120,7 @@ visible = false
 
 [node name="Background Music" type="Node" parent="."]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Background Music"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Background Music"]
 stream = ExtResource( 2 )
 volume_db = -12.5
 autoplay = true
@@ -137,4 +135,4 @@ visible = false
 [connection signal="pressed" from="Menu/Center Row/Buttons/Controls Button" to="CanvasLayer/Instructions" method="_on_Button_pressed"]
 [connection signal="pressed" from="Menu/Center Row/Buttons/Quit Button" to="." method="_on_Quit_Button_pressed"]
 [connection signal="fade_finished" from="Fade In" to="." method="_on_Fade_In_fade_finished"]
-[connection signal="finished" from="Background Music/AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Background Music/AudioStreamPlayer" to="." method="_on_AudioStreamPlayer2D_finished"]

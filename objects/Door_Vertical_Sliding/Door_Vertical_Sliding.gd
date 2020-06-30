@@ -4,6 +4,10 @@ var open = false
 var in_motion = false
 var in_range = false
 
+onready var key_node = get_parent().get_parent().get_node("Keys/Key")
+onready var player_node = get_parent().get_parent().get_node("Player/Player/Area2D")
+onready var overlap = get_overlapping_areas()
+
 export(String, FILE, "*.tscn") var world_scene
 
 func _physics_process(delta):
@@ -30,7 +34,6 @@ func _physics_process(delta):
 		
 		else:
 			$AnimatedSprite.play("door_close_idle")
-	
 
 func _on_AnimatedSprite_animation_finished():
 	"""
@@ -43,9 +46,17 @@ func _on_AnimatedSprite_animation_finished():
 		$AnimatedSprite.play("door_close_idle")
 		in_motion = false
 
-
 func _on_Door_Vertical_Sliding_area_entered(area):
-	in_range = true
+	overlap = get_overlapping_areas()
+	
+	if overlap.size() == 0:
+		pass
+	elif overlap.size() == 1 and overlap[0] == player_node:
+		in_range = true
+	elif overlap.size() == 2 and (overlap[0] == player_node or overlap[1] == player_node):
+		in_range = true
+	else:
+		pass
 
 func _on_Door_Vertical_Sliding_area_exited(area):
 	in_range = false

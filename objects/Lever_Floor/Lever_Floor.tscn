@@ -20,16 +20,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "right_idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "left_idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 2 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 7 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "switch_right_to_left",
@@ -39,6 +29,16 @@ animations = [ {
 "loop": true,
 "name": "switch_left_to_right",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "left_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "right_idle",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -62,4 +62,5 @@ shape = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
+volume_db = -15.0
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
