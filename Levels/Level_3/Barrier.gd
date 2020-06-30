@@ -24,7 +24,7 @@ func _on_Area2D_area_entered(area):
 	"""
 	Death Barrier that will cause a scene reset.
 	"""
-	if overlap[0] == key_node:
+	if overlap[0] == key_node and overlap.size() == 1:
 		pass
 	else:
 		print("DEATH BY MOVING DEATH BARRIER")

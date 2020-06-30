@@ -27,7 +27,7 @@ position = Vector2( 9855.32, 1365.3 )
 [node name="Keys" type="Node2D" parent="."]
 
 [node name="Key" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( 5371.82, 856.649 )
+position = Vector2( 5406.19, 860.945 )
 
 [node name="Player" type="Node2D" parent="."]
 
