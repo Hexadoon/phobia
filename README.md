@@ -34,6 +34,11 @@ Phobia Uses the following software
 - Photoshop
 - Animator (check)
  
+#### Music and Sound
+- Bill Ni
+- Additional Music and sound effects from https://www.zapsplat.com
+- Additional Music and sound effects from https://www.freesound.org
+ 
 ### Developers
 
 Project Managers
