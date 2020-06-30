@@ -12,7 +12,7 @@ You are a white, glowing, humanoid figure that starts in what appears to be sewe
 - Keyboard and Mouse/trackpad inputs only
 
 ### How To Install
-In the "Dist" folder download the Phobia.exe file for Windows and the Phobia.dmg file for Mac OS.
+In the "Dist" folder select the appropriate download links for your system.
 
 ### How to Contribute
 #### Submitting Issues
