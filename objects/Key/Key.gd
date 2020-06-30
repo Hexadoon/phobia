@@ -10,6 +10,7 @@ func _physics_process(delta):
 		if hold == false:
 			hold = true
 			visible = not visible
+			$AudioStreamPlayer.play()
 
 func _on_Key_area_entered(area):
 	if hold == false and player_vars.FLAG:
