@@ -64,12 +64,11 @@ func _physics_process(delta):
 		floor1.visible = true
 		floor1.set_collision_layer(1)
 	if firstplate and secondplate and thirdplate:
+		player_vars.FLAG = true
 		if !key.hold:
 			key.visible = true
-		player_vars.FLAG = true
 	else:
 		player_vars.FLAG = false
-
 
 func _on_AudioStreamPlayer_finished():
 	$AudioStreamPlayer.play()

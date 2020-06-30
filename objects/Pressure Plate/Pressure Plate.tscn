@@ -1,19 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objects/Pressure Plate/images/pressure_plate_1.png" type="Texture" id=1]
 [ext_resource path="res://objects/Pressure Plate/images/pressure_plate_2.png" type="Texture" id=2]
 [ext_resource path="res://objects/Pressure Plate/Pressure Plate.gd" type="Script" id=3]
+[ext_resource path="res://objects/sfx/button_sound.wav" type="AudioStream" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "plate_inactive",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "plate_active",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "plate_inactive",
 "speed": 5.0
 } ]
 
@@ -33,3 +34,7 @@ animation = "plate_active"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 95 )
 shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.0
